@@ -1,0 +1,607 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Traffic Model / FEP / ATMS Overview &mdash; TMC Simulator 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Developer Resources" href="../developer-resources/index.html" />
+    <link rel="prev" title="Traffic / FEP / ATMS Overview" href="index.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> TMC Simulator
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Traffic / FEP / ATMS Overview</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Traffic Model / FEP / ATMS Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../developer-resources/index.html">Developer Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contact.html">Contact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../how-to/index.html">How To / Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">TMC Simulator</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Traffic / FEP / ATMS Overview</a> &raquo;</li>
+        
+      <li>Traffic Model / FEP / ATMS Overview</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/traffic-model-and-FEP/traffic-fep-atms-overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="traffic-model-fep-atms-overview">
+<h1>Traffic Model / FEP / ATMS Overview<a class="headerlink" href="#traffic-model-fep-atms-overview" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#terminology">Terminology</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#purpose">Purpose</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#architecture">System Architecture</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#overview">Overview of System</a><ol class="arabic">
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#trafficmodeloverview">Traffic
+Model</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#fepsimoverview">FEP Simulator</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#atmsoverview">ATMS</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#systembehavior">System
+Behavior</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#whyfep">Why do we need FEP
+Sim?</a></li>
+</ol>
+</li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#detailedcomponentoverviews">Detailed Component
+Overviews</a><ol class="arabic">
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#trafficmodeldetail">Traffic
+Model</a><ol class="arabic">
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#trafficmodelbehavior">Behavior</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#trafficmodelclasses">Traffic Model
+Classes</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#differentabstractions">Different Abstractions. FEP Line vs
+Highway</a></li>
+</ol>
+</li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#fepsimdetail">FEP Simulator</a><ol class="arabic">
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#realfep">The Real FEP</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#ourfep">Our FEP Simulator</a></li>
+</ol>
+</li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#atmsdetail">ATMS</a></li>
+</ol>
+</li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#protocols">Protocols</a><ol class="arabic">
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#traffictofep">Traffic Model to FEP
+Simulator</a><ol class="arabic">
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#exampletraffic">Example Traffic Conditions
+Message</a></li>
+</ol>
+</li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#feptoatms">FEP Simulator to
+ATMS</a><ol class="arabic">
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#fepreply">fep_reply
+structs</a></li>
+<li><a class="reference external" href="/wiki/TrafficModelATMSOverview#trafficmessage">Traffic Conditions Message
+Structure</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p class="rubric" id="terminology">Terminology<a class="reference external" href="#terminology">¶</a></p>
+<ul class="simple">
+<li>FEP = Front End Processor</li>
+<li>ATMS = Advanced Traffic Management Server</li>
+<li>TMC = Traffic Management Control</li>
+<li>RPC = Remote Procedural Calls</li>
+</ul>
+<p class="rubric" id="purpose">Purpose<a class="reference external" href="#purpose">¶</a></p>
+<p>An important function of the TMC simulator is to simulate the traffic
+flow that results from a simulated traffic incident. The traffic flow is
+shown to the Cal Trans dispatcher as a road map with sensor locations
+displayed in different colors that correspond to stopped, slowed, or
+free flowing traffic. In the real world, data from sensors embedded in
+highways is transmitted in real time to a computer called the ATMS which
+then determines the flow of traffic along a network of highways. For the
+TMC Simulator there is no actual sensor data so this must be simulated
+with a traffic model. In previous versions of the TMC Simulator the
+traffic model used was a commercial product called Paramics. For a
+variety of technical, legal, and economic reasons the use of Paramics
+became infeasible and we choose to abandon it and develop our own
+solution.</p>
+<p>This document provides an overview of the Traffic Model, the FEP
+Simulator, and the ATMS. Each of these components work together in the
+TMC Simulation System to simulate traffic conditions, and display them
+to trainees. This document will explain to the reader, at a high level,
+the system architecture and how the components work together to simulate
+the traffic conditions, an overview of each component, and lastly, the
+protocols between each component.</p>
+<p class="rubric" id="architecture">System Architecture<a class="reference external" href="#architecture">¶</a></p>
+<p>The <a class="reference external" href="/wiki/DeploymentDiagram">System (Traffic Model / FEP / ATMS) Deployment/Component
+Diagram</a> is a UML Deployment / Component
+diagram which helps to describe the system architecture.</p>
+<p class="rubric" id="overview">Overview of System<a class="reference external" href="#overview">¶</a></p>
+<p class="rubric" id="trafficmodeloverview">What is the Traffic Model?<a class="reference external" href="#trafficmodeloverview">¶</a></p>
+<p>The Traffic Model is a loose term that describes the components of the
+Java CAD Server that model the simulated traffic conditions of the
+highways during the simulation. It consists of the Traffic Model Manager
+and the Highways model.</p>
+<p class="rubric" id="fepsimoverview">What is the FEP Simulator?<a class="reference external" href="#fepsimoverview">¶</a></p>
+<p>The FEP Simulator simulates the actual FEP that is used in production
+systems at Cal Trans. The actual FEP gathers the real time highway
+sensor data and transmits it to the ATMS. The FEP Simulator will gather
+simulated highway sensor data from the traffic model and transmit it to
+the ATMS. It acts as a mediator between the Traffic Model and the ATMS.
+Its purpose is to receive the traffic condition data over a socket from
+the Traffic Model, parse and reformat this received data into fep_reply
+structs, and send the fep_reply structs to the ATMS via RPC. The FEP
+Simulator is a C++ program that runs on a Linux VM on the TMC network.</p>
+<p class="rubric" id="atmsoverview">What is the ATMS?<a class="reference external" href="#atmsoverview">¶</a></p>
+<p>The ATMS is a production server, purchased from Cal Trans, that accepts
+the fep_reply structs from the FEP Simulator via RPC. The ATMS accepts
+fep_reply structs, which contain traffic condition data, to feed the
+ATMS Client. The ATMS Client displays traffic condition data on an
+interactive map GUI to the trainees.</p>
+<p class="rubric" id="systembehavior">System Behavior / How do these components work
+together?<a class="reference external" href="#systembehavior">¶</a></p>
+<p>Reference the <a class="reference external" href="/wiki/TrafficFEPATMSActivityDiagram">Traffic Model / FEP / ATMS Activity
+Diagram</a> while reading this
+section. It helps to describe system behavior.</p>
+<p>When the CAD Server starts, the Traffic Model Manager and the Highways
+model are instantiated. The Traffic Model Manager spawns a thread, the
+WriteToFEPThread, which creates a client socket connection with the FEP
+Simulator. The traffic conditions message is sent over this socket, to
+the FEP Simulator, on every 30 second interval. To do so, the
+WriteToFEPThread calls upon the Highways class’ writeToFEP() method.</p>
+<p>The FEP Simulator acts as a socket server, and awaits the traffic conditions message from the CAD Server’s Traffic Model Manager. Upon
+receipt of this message, the FEP Simulator parses and reconfigures the
+data into fep_reply structs. It then sends the fep_reply structs to
+the ATMS via RPC. Once this process is finished, the FEP Simulator
+awaits another traffic conditions message from the CAD Server, and the
+process repeats.</p>
+<p>The ATMS receives the fep_reply structs from the FEP Simulator, and
+then communicates the fep_reply data, which contains the traffic
+conditions, to the ATMS Client. The end result is the traffic conditions
+being displayed to trainees on the interactive map GUI.</p>
+<p class="rubric" id="whyfep">Why do we need the FEP Simulator?<a class="reference external" href="#whyfep">¶</a></p>
+<p>Why do we need the FEP Simulator as a mediator? Can’t we just send the
+fep_replys directly to the ATMS via RPC? The short answer to this
+question is no. Java does not support RPC natively, whereas C and C++
+do. It is possible to use RPCs with Java, but to do so it would require
+a great deal of work or money. Read more about this decision in the
+<a class="reference external" href="/wiki/LessonsLearned">Lessons Learned Document</a>.</p>
+<p class="rubric" id="detailedcomponentoverviews">Detailed Component
+Overviews<a class="reference external" href="#detailedcomponentoverviews">¶</a></p>
+<p>This section will describe each component individually in more detail,
+to give a better understanding of how they work.</p>
+<p class="rubric" id="trafficmodeldetail">Traffic Model<a class="reference external" href="#trafficmodeldetail">¶</a></p>
+<p>Reference the <a class="reference external" href="/wiki/TrafficModelClassDiagram">Traffic Model Class
+Diagram</a> while reading this section.</p>
+<p class="rubric" id="trafficmodelbehavior">Behavior<a class="reference external" href="#trafficmodelbehavior">¶</a></p>
+<p>As previously stated, the Traffic Model consists of the Traffic Model
+Manager and the Highways model. The Traffic Model Manager contains an
+instance of the Highways class. Both the Traffic Model Manager and the
+Highways model and instantiated upon CAD Server start up. Once
+instantiated, the Traffic Model Manager spawns an instance of the
+WriteToFEPThread, which sends the current traffic conditions of the
+Highways to the FEP Simulator by calling the Highways class’
+writeToFEP() method, on every 30 second interval.</p>
+<p>The Traffic Model Manager also loads Traffic Events from a batch file
+into a queue, the eventsQueue, when instantiated. The Traffic Events
+batch file is specified in the Traffic Model Manager’s properties file.
+A Traffic Event changes the current traffic conditions at a specified
+location. As the simulation runs, the Traffic Model Manager queries the
+Coordinator object for the current simulation time, and then checks the
+queue to see if there are Traffic Events that should be applied to the
+Highways model at the current simulation time.</p>
+<p class="rubric" id="trafficmodelclasses">Traffic Model Classes<a class="reference external" href="#trafficmodelclasses">¶</a></p>
+<p>The Highways and Highway classes were developed to give developers an
+abstraction of the traffic network that was feasible to work with. A
+Highway is undirected, meaning it does not have an associated (N/S/W/E)
+direction and represents traffic in both directions on the highway. A
+Highway is an aggregation of all of the Stations on a highway, sorted by
+postmile value. Stations do have an associated direction. Stations may
+or may not have Loop Detectors associated with the specified station
+direction, or the opposite specified direction. Hence, the undirected
+Highway abstraction.</p>
+<p>The Highways, Highway, and Station classes are all immutable. None of
+them contain dynamic data. The only class in the Highways model that
+contains dynamic values is the <a class="reference external" href="/wiki/LoopDetector">LoopDetector?</a>
+class. The dynamic values in the <a class="reference external" href="/wiki/LoopDetector">LoopDetector?</a>
+class are volume and occupancy. The volume field is an int, and the
+occupancy field is a float in the [0,1] range. The DOTCOLOR enum
+(specified in the <a class="reference external" href="/wiki/LoopDetector">LoopDetector?</a> class)
+represents the colors shown on the ATMS Client
+(<a class="reference external" href="/wiki/Green/Yellow/Red">Green/Yellow/Red?</a>). This enum supplies the
+necessary volume and occupancy values to achieve the desired display
+color for a Loop Detector.</p>
+<p class="rubric" id="differentabstractions">Different Abstractions. FEP Line vs
+Highway<a class="reference external" href="#differentabstractions">¶</a></p>
+<p>It should be noted that the ATMS has no concept of the Highways and
+Highway abstraction, only FEPLines, Stations, and Loop Detectors.
+FEPLines, like the Highway Class, are also composed of Stations but are
+not a convenient abstraction because they only represent serial
+communication lines used to communicate with a geographic group of field
+stations. The FEPLines need to be represented because they contain
+necessary attributes that must be passed on to the FEP Simulator to
+populate the fep_reply structs. As a developer you will work within the
+Highways, Highway, Station, and <a class="reference external" href="/wiki/LoopDetector">LoopDetector?</a>
+abstraction. The Traffic Model communicates with the FEP Simulator /
+ATMS in the context of the FEPLine, Station,
+<a class="reference external" href="/wiki/LoopDetector">LoopDetector?</a> abstraction.</p>
+<p>The next section “FEP Simulator” will give a better understanding of
+FEPLines and why their representation is necessary in the simulation
+system.</p>
+<p class="rubric" id="fepsimdetail">FEP Simulator<a class="reference external" href="#fepsimdetail">¶</a></p>
+<p>Reference the <a class="reference external" href="/wiki/FEPSimClassDiagram">FEP Simulator Class Diagram</a>
+while reading this section. It is not quite as helpful as the Traffic
+Model Class Diagram, because the FEP Simulator is really just a
+functional program.</p>
+<p class="rubric" id="realfep">The Real FEP<a class="reference external" href="#realfep">¶</a></p>
+<p>To understand how the FEP Simulator works, it helps to understand how
+the actual FEP works. The actual FEP “polls” field stations, over serial
+communication lines (FEPLines), for traffic data via RPC. For clarity,
+“polling” is the act of the FEP requesting traffic data from a field
+station. When “polled”, the field station sends traffic data back to the
+FEP via RPC. Upon receipt of the traffic data from the field stations,
+the FEP then reformats the data into an fep_reply struct and sends it
+to the ATMS via RPC.</p>
+<p class="rubric" id="ourfep">Our FEP Simulator<a class="reference external" href="#ourfep">¶</a></p>
+<p>In contrast, our FEP Simulator is not actually “polling” field stations,
+and instead just reads all traffic data over the socket from the CAD
+Server’s Traffic Model. It is similar, however, in that it reformats
+traffic condition data into fep_reply structs and sends them to the
+ATMS via RPC.</p>
+<p>The FEP Simulator runs persistently on the Linux Virtual Machine on the
+TMC network.The FEP Simulator acts as a socket server, and awaits the
+traffic conditions message from the CAD Server’s Traffic Model Manager.</p>
+<p>Upon receipt of this message, the FEP Simulator parses and reconfigures
+the data into fep_reply structs. To do so, it uses the
+<code class="docutils literal notranslate"><span class="pre">HighwaysParser</span></code> class to parse the message from the Traffic Model
+into FEP_LINE and STATION structs. Once parsed, it reformats the data
+into fep_reply structs. fep_replys contain a Traffic Conditions
+Message, a char[] array that contains traffic condition data. This
+message is “packed” or created by using the static packData() method
+from the <code class="docutils literal notranslate"><span class="pre">DataPacker</span></code> class. See the Protocols section for more
+information. It then sends the fep_reply structs to the ATMS via RPC.
+Once this process is finished, the FEP Simulator awaits another traffic
+conditions message from the CAD Server, and the process repeats.</p>
+<p class="rubric" id="atmsdetail">ATMS<a class="reference external" href="#atmsdetail">¶</a></p>
+<p>The ATMS is a complete production server purchased from
+<a class="reference external" href="/wiki/CalTrans">CalTrans?</a>. We were unable to find detailed
+documentation about ATMS features other than its ability to receive
+fep_reply structs via RPC and feed the received data to the ATMS Client
+interactive map GUI.</p>
+<p class="rubric" id="protocols">Protocols<a class="reference external" href="#protocols">¶</a></p>
+<p class="rubric" id="traffictofep">Traffic Model to FEP Simulator<a class="reference external" href="#traffictofep">¶</a></p>
+<p>The Traffic Model communicates with the FEP Simulator by sending the
+traffic conditions message over a socket connection.</p>
+<p>The traffic conditions message is produced by the Highways class method
+“toCondensedFormat(false)”.</p>
+<p class="rubric" id="exampletraffic">Example Traffic Conditions Message<a class="reference external" href="#exampletraffic">¶</a></p>
+<p>Example traffic conditions message (toCondensedFormat(false)) output:</p>
+<p class="rubric" id="feptoatms">FEP Simulator to ATMS<a class="reference external" href="#feptoatms">¶</a></p>
+<p>The FEP Simulator communicates with the ATMS via RPC. It sends
+fep_reply structs which contain traffic condition data messages. Each
+fep_reply struct corresponds to a single FEPLine.</p>
+<p>The FEP Simulator includes the generated rpc files: “fep.h”,
+“fep_clnt.c”, and “fep_xdr.c”. These files need to be included to
+utilize RPC.</p>
+<p>The method used to transfer the fep_replys, from the included rpc
+files, is named fep_reply_xfer_32(fep_reply *reply, CLIENT *clnt).</p>
+<p>fep_reply structs contain metadata and an fep_answer_list struct. An
+fep_answer_list struct contains a fep_shortanswer_list struct. An
+fep_shortanswer_list struct contains an fep_shortanswer struct. An
+fep_shortanswer struct contains an fep_shortanswer_msg struct. The
+fep_shortanswer_msg contains a char array, which is the actual message
+that contains traffic condition data. All of these structs are defined
+in the “fep.h” file. The struct definitions are as follows:</p>
+<p class="rubric" id="fepreply">fep_reply struct<a class="reference external" href="#fepreply">¶</a></p>
+<div class="wikipage" style="font-size: 80%"><div class="code"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">fep_reply</span> <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">reply</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">schedule</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">lineinfo</span><span class="p">;</span>
+        <span class="n">polltype</span> <span class="n">kind</span><span class="p">;</span>
+        <span class="n">replykind</span> <span class="n">flag</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">schedule_sequence</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">global_sequence</span><span class="p">;</span>
+        <span class="n">long</span> <span class="n">schedule_time</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">user_info1</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">user_info2</span><span class="p">;</span>
+        <span class="nb">int</span> <span class="n">system_key</span><span class="p">;</span>
+        <span class="n">struct</span> <span class="n">fep_answer_list</span> <span class="n">answers</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">typedef</span> <span class="n">struct</span> <span class="n">fep_reply</span> <span class="n">fep_reply</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></div><p class="rubric" id="fep-answer-liststruct">fep_answer_list struct<a class="reference external" href="#fep_answer_liststruct">¶</a></p>
+<div class="wikipage" style="font-size: 80%"><div class="code"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">fep_answer_list</span> <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">size</span><span class="p">;</span>
+        <span class="n">union</span> <span class="p">{</span>
+                <span class="n">fep_shortanswer_list</span> <span class="n">shortp</span><span class="p">;</span>
+                <span class="n">fep_longanswer_list</span> <span class="n">longp</span><span class="p">;</span>
+        <span class="p">}</span> <span class="n">fep_answer_list_u</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">typedef</span> <span class="n">struct</span> <span class="n">fep_answer_list</span> <span class="n">fep_answer_list</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></div><p class="rubric" id="fep-shortanswer-list">fep_shortanswer_list<a class="reference external" href="#fep_shortanswer_list">¶</a></p>
+<div class="wikipage" style="font-size: 80%"><div class="code"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">fep_shortanswer_list</span> <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">count</span><span class="p">;</span>
+        <span class="n">fep_shortanswer</span> <span class="n">answers</span><span class="p">[</span><span class="n">MAXSHORTPOLLS</span><span class="p">];</span>
+<span class="p">};</span>
+<span class="n">typedef</span> <span class="n">struct</span> <span class="n">fep_shortanswer_list</span> <span class="n">fep_shortanswer_list</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></div><p class="rubric" id="fep-shortanswer">fep_shortanswer<a class="reference external" href="#fep_shortanswer">¶</a></p>
+<div class="wikipage" style="font-size: 80%"><div class="code"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">fep_shortanswer</span> <span class="p">{</span>
+        <span class="n">fep_answer_info</span> <span class="n">info</span><span class="p">;</span>
+        <span class="n">fep_answer_short_msg</span> <span class="n">msg</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="n">typedef</span> <span class="n">struct</span> <span class="n">fep_shortanswer</span> <span class="n">fep_shortanswer</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></div><p class="rubric" id="fep-answer-short-msg">fep_answer_short_msg<a class="reference external" href="#fep_answer_short_msg">¶</a></p>
+<div class="wikipage" style="font-size: 80%"><div class="code"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">fep_answer_short_msg</span> <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">message_len</span><span class="p">;</span>
+        <span class="n">char</span> <span class="n">message</span><span class="p">[</span><span class="n">MAXSHORTREPLYLEN</span><span class="p">];</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</div></div><p class="rubric" id="trafficmessage">Traffic Conditions Message
+Structure<a class="reference external" href="#trafficmessage">¶</a></p>
+<p>As seen above in the fep_anser_short_msg struct, the traffic
+conditions message is a char[] array. The FEP Simulator uses the static
+packData(STATION*) method from the <code class="docutils literal notranslate"><span class="pre">DataPacker</span></code> class to pack the
+traffic condition data into a message.</p>
+<p>The message contains static data, such as station drop numbers, and
+dynamic data, like volume and occupancy.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="7%" />
+<col width="20%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Byte #</td>
+<td>Value</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>1</td>
+<td>VARIES</td>
+<td>Station drop number</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td># of loops * 2 + Fixed_Byte_To_Checksum</td>
+<td>Describes number of loops at station</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>high = # of opp loops, low = # of ml loops, value = high | low</td>
+<td>Describes number of ML and OP loops</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>0xAO</td>
+<td>UNKNOWN</td>
+</tr>
+<tr class="row-even"><td>5 to 8</td>
+<td>VARIES</td>
+<td>Lane configuration</td>
+</tr>
+<tr class="row-odd"><td>9</td>
+<td>0</td>
+<td>0 = no metering</td>
+</tr>
+<tr class="row-even"><td>10 to 13</td>
+<td>0</td>
+<td>Lane malfunction flags. We assume all are functional and set to 0</td>
+</tr>
+<tr class="row-odd"><td>14 to 22</td>
+<td>Values are constants</td>
+<td>Although constant, values differ between metering lanes and regular lane types. UNKNOWN?</td>
+</tr>
+<tr class="row-even"><td>23</td>
+<td>VARIES</td>
+<td>ML Tot Volume</td>
+</tr>
+<tr class="row-odd"><td>24</td>
+<td>VARIES</td>
+<td>OP Tot Volume</td>
+</tr>
+<tr class="row-even"><td>25</td>
+<td>0x03</td>
+<td>UNKNOWN</td>
+</tr>
+<tr class="row-odd"><td>26</td>
+<td>0x84</td>
+<td>UNKNOWN</td>
+</tr>
+<tr class="row-even"><td>27 to Last Byte - 1</td>
+<td>VARIES</td>
+<td>Dynamic data for loop detectors. If there is data for the loop detector, pack volume and occupancy into a two byte data packet using the packVOLOCC(vol, occ) method, insert at the current position, and increase the current position after doing so.</td>
+</tr>
+<tr class="row-odd"><td>Last Byte</td>
+<td>VARIES</td>
+<td>check sum value</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../developer-resources/index.html" class="btn btn-neutral float-right" title="Developer Resources" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Traffic / FEP / ATMS Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, John Torres, John Dalbey, Neil Hockaday
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
