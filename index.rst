@@ -7,8 +7,24 @@ Welcome to TMC Simulator's documentation!
 =========================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
+
+   traffic-model-and-FEP/traffic-fep-atms-overview
+   traffic-model-and-FEP/lessons-learned-2018
+   traffic-model-and-FEP/traffic-model-class-diagram traffic-model-and-FEP/system-deployment-diagram
+   traffic-model-and-FEP/FEP-sim-class-diagram
+   traffic-model-and-FEP/system-activity-diagram
+   developer-resources/onboarding
+   developer-resources/reference-manuals
+   developer-resources/ant-tips
+   atms-fep-information
+   contact
+   how-to/fep-sim-install-instructions
+   how-to/dev-sim-startup
+   how-to/production-sim-startup
+   how-to/install-simulator
+   how-to/update-before-commit
 
 
 

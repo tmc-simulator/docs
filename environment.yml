@@ -1,0 +1,5 @@
+name: tmcdocs
+channels:
+  - defaults
+prefix: /home/jtorres/anaconda3/envs/tmcdocs
+
